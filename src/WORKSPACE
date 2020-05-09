@@ -1,6 +1,5 @@
-# TODO setup docker
-# TODO setup golang docker
-# TODO setup skaffold
+# TODO fix:: compile for macos platform
+# TODO feature:: setup skaffold
 
 workspace(name = "example")
 
