@@ -1,6 +1,6 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+package(default_visibility = ["//visibility:public"])
 
-go_binary(
-    name = "hello",
-    srcs = ["hello.go"],
-)
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/example/project
+gazelle(name = "gazelle")
