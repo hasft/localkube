@@ -1,5 +1,4 @@
-# TODO fix:: compile for macos platform
-# TODO feature:: setup skaffold
+# TODO setup skaffold
 
 workspace(name = "example")
 
