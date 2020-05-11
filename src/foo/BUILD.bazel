@@ -1,6 +1,7 @@
+# TODO remove docker daemon
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 load("@io_bazel_rules_docker//go:image.bzl", "go_image")
-load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push", "container_pull")
 
 go_library(
     name = "go_default_library",
@@ -23,7 +24,7 @@ go_image(
 
 # for macos
 container_image(
-    name = "image_macos",
+    name = "container_macos",
     base = ":image_linux",
     ports = ["8080"],
     legacy_run_behavior = False,
@@ -40,7 +41,7 @@ container_push(
 
 container_push(
     name = "push_macos",
-    image = ":image_macos",
+    image = ":container_macos",
     format = "Docker",
     registry = "docker.io",
     repository = "hasft/example"
